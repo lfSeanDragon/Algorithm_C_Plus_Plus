@@ -3,7 +3,8 @@
 /* C++ Program for Bitonic Sort. Note that this program
    works only when size of input is a power of 2. */
 
-#include <iostream>
+#include <stdio.h>
+
 #include <algorithm>
 using namespace std;
 
@@ -52,7 +53,7 @@ void sort(int a[], int N, int up) { bitonicSort(a, 0, N, up); }
 
 // Driver code
 int main() {
-    int a[] = {3, 7, 4, 9, 6, 2, 1, 5};
+    int a[] = {3, 7, 4, 9, 8, 6, 2, 1, 5};
     int N = sizeof(a) / sizeof(a[0]);
 
     int up = 1;  // means sort in ascending order

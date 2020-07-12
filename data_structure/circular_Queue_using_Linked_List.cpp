@@ -1,24 +1,20 @@
 #include <iostream>
 using namespace std;
 
-struct node
-{
+struct node {
     int data;
     struct node *next;
 };
-class Queue
-{
+class Queue {
     node *front;
     node *rear;
 
-public:
-    Queue()
-    {
+   public:
+    Queue() {
         front = NULL;
         rear = NULL;
     }
-    void createNode(int val)
-    {
+    void createNode(int val) {
         node *ptr;
         node *nn;
         nn = new node;
@@ -28,14 +24,10 @@ public:
         front = nn;
         rear = nn;
     }
-    void enqueue(int val)
-    {
-        if (front == NULL || rear == NULL)
-        {
+    void enqueue(int val) {
+        if (front == NULL || rear == NULL) {
             createNode(val);
-        }
-        else
-        {
+        } else {
             node *ptr;
             node *nn;
             ptr = front;
@@ -46,19 +38,16 @@ public:
             rear = nn;
         }
     }
-    void dequeue()
-    {
+    void dequeue() {
         node *n;
         n = front;
         front = front->next;
         delete (n);
     }
-    void traverse()
-    {
+    void traverse() {
         node *ptr;
         ptr = front;
-        do
-        {
+        do {
             cout << ptr->data << " ";
             ptr = ptr->next;
         } while (ptr != rear->next);
@@ -66,8 +55,7 @@ public:
         cout << endl;
     }
 };
-int main(void)
-{
+int main(void) {
     Queue q;
     q.enqueue(10);
     q.enqueue(20);
@@ -77,7 +65,7 @@ int main(void)
     q.enqueue(60);
     q.enqueue(70);
     q.traverse();
-    q.dequeue();
-    q.traverse();
+    // q.dequeue();
+    // q.traverse();
     return 0;
 }
